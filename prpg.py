@@ -2,7 +2,6 @@ import time #invt 는 인벤토리안의 툴 invw는 인벤토리안의 무기 i
 from random import seed
 from random import randint
 import math
-from colorama import Fore, Back, Style
 a = 1
 invt = "nothing"
 bread = 0
@@ -405,11 +404,11 @@ if answer == "yes":
                 tcon = input('C to Cancel>>>')
                 while True:
                     if tcon == '1':
-                        print(Fore.GREEN + 'CONTROLS')
+                        print('CONTROLS')
                         print ("A: Hunt","C: Chop Trees","M: Mine","B: Open Bazaar","S: Show Stats","I: Inventory","X: Exit","T: Show Tutorial", sep='\n')
                         break
                     if tcon == '2':
-                        print(Fore.GREEN + 'GUIDE')
+                        print('GUIDE')
                         print('You can earn cash by hunting, mining, and chopping woods!','You can do it by buying matching weapons or tools','You can buy them at bazaar.', 'Hunting: Swords', 'Mining: Pickaexes', 'Chopping woods: Axes', 'If your are newbie I recommend you to try hunting', 'You can grow you stats by eating foods(Carrot: 0.1 or bread: 0.2)','You can get seed by eating carrots','You can farm them',sep='\n')
                         break
                     if tcon == 'c':
