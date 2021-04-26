@@ -1,8 +1,8 @@
+import json
 import time #invt 는 인벤토리안의 툴 invw는 인벤토리안의 무기 invf 는 인벤토리안의 음식
 from random import seed
 from random import randint
 import math
-a = 1
 invt = "nothing"
 bread = 0
 carrot = 0
@@ -24,26 +24,27 @@ turn = 0
 UserHealth = 100
 Prize = 0
 cash = 100
-print("Hello! What's your name??")
-User = input(">>> ")
-print ("Oh, hello nice to meet you "+User+"!")
-print ("Do you want to start your game??")
+played = 1
+print ("Elizabeth: Welcome back, "+User+"!")
+print ("Elizabeth: Do you want to resume your game?")
 answer = input("[yes or no?] ")
 if answer == "yes":
-    print ("Ok, wait a sec...")
+    print ("Ok.")
     time.sleep(0.5)
-    print ("[Creating world...]")
+    print ("Loading..")
     time.sleep(0.5)
-    print ("[Entering.....]")
+    print ("Entering...")
     time.sleep(0.5)
-    print ("[System: "+User+" has entered.]")
-    print ("[System: welcome "+User+"!")
+    print ("Entered the realm")
     time.sleep(0.5)
-    print ("???: Oh hello "+User+"!","I'm Hehg")
-    print ("Do you want to START?")
+    print ("Hehg: Good morning "+User+"!")
+    time.sleep(0.5)
+    print ("Do you want to resume?")
+    time.sleep(0.5)
     answer = input("[yes or no?] ")
     if answer == "yes":
-        print ("Ok!", "Controls:", "A: Hunt","C: Chop Trees","M: Mine","B: Open Bazaar","S: Show Stats","I: Inventory","X: Exit","T: Show Tutorial", sep='\n')
+        time.sleep(0.5)
+        print ("Ok! '\n' If you need any help, open the tutorial book with 't'.")
         while True:
             control = input(">>> ")
             if control == "b":
@@ -239,7 +240,7 @@ if answer == "yes":
                             cash = cash - 25
                         elif cash < 25:
                             print ("You don't have enough cash to buy")
-                      
+                    
                 if bcon == "c":
                         print ("Ok Canceled")
 
@@ -397,10 +398,10 @@ if answer == "yes":
                             
 
             if control == "s":
-                print ("Now Your Current Cash: ",cash)
+                print ("Your Current Cash: ",cash)
 
             if control == "t":
-                print('1. controls','2. guide')
+                print('1. controls','2. guide', sep='\n')
                 tcon = input('C to Cancel>>>')
                 while True:
                     if tcon == '1':
@@ -412,7 +413,7 @@ if answer == "yes":
                         print('You can earn cash by hunting, mining, and chopping woods!','You can do it by buying matching weapons or tools','You can buy them at bazaar.', 'Hunting: Swords', 'Mining: Pickaexes', 'Chopping woods: Axes', 'If your are newbie I recommend you to try hunting', 'You can grow you stats by eating foods(Carrot: 0.1 or bread: 0.2)','You can get seed by eating carrots','You can farm them',sep='\n')
                         break
                     if tcon == 'c':
-                        print('You ended tutorial')
+                        print('You closed the tutorial book from this realm.')
                         break
 
 
@@ -493,7 +494,7 @@ if answer == "yes":
                                     else:
                                         time.sleep(0.6)
                                         continue
-                           
+                        
                             else:
                                 break
                             
@@ -501,7 +502,7 @@ if answer == "yes":
                         print("You found a Cow!")
                         OpponentHealth = 200
                         print("1. Attack  2. Run away")
-                        while True:
+                        while OpponentHealth >= 0:
                             acon = input (">>> ")
                             if acon == "1":
                                 if Weapon == "Wood Sword":
@@ -565,6 +566,7 @@ if answer == "yes":
                                         time.sleep(1)
                                         continue
                             else:
+                                print("You succesfully ran away from",animal,"!")
                                 break
             
             
@@ -574,10 +576,10 @@ if answer == "yes":
             if control == "f":
                 print("Do you want to plant your carrot?")
                 print("You need to wait [1 min] to grow you carrot")
-                fanswer = input("Yes or NO>>>")
+                fanswer = input("Yes or NO \n>>>")
                 if fanswer == "yes":
                     if Hoe == "nothing":
-                        print("You have no Hoe, go to bazaar and buy one")
+                        print("You don't have a hoe, go to the bazaar and buy one")
                     if Hoe == "Wood Hoe":
                         if seed >= 5:
                             seed = seed - 5
@@ -634,13 +636,32 @@ if answer == "yes":
                             print(Seedstr)
 
                 else:
-                    print("Cancled")
-        
+                    print("Canceled")
+            if control == "escape":
+                dictionary ={
+                    "User": User,
+                    "invt" : invt,
+                    "bread" : bread,
+                    "carrot" : carrot,
+                    "Carrotstr" : Carrotstr,
+                    "Breadstr" : Breadstr,
+                    "Seedstr" : Seedstr,
+                    "invf" : invf,
+                    "invw" : invw,
+                    "Pickaxe" : Pickaxe,
+                    "Axe" : Axe,
+                    "Hoe" : Hoe,
+                    "Weapon" : Weapon,
+                    "strength" : strength,
+                    "Userhealth" : UserHealth,
+                    "cash" : cash
+                }
+                
+                with open("sample.json", "w") as outfile:
+                    outfile.write(json_object)
+
 
 if answer == "no":
     print ("Ok, then..")
     time.sleep(0.5)
-    print ("See you next time :(")
-    
-    
-
+    print ("See you next time.")
