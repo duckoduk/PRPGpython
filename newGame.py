@@ -411,7 +411,7 @@ if answer == "yes":
             while True:
                 if tcon == '1':
                     print('CONTROLS')
-                    print ("A: Hunt","C: Chop Trees","M: Mine","B: Open Bazaar","S: Show Stats","I: Inventory","X: Exit","T: Show Tutorial","Save: Save the Game", sep='\n')
+                    print ("A: Hunt","C: Chop Trees","M: Mine","B: Open Bazaar","S: Show Stats","I: Inventory","X: Exit","T: Show Tutorial","H: Save the Game", sep='\n')
                     break
                 if tcon == '2':
                     print('GUIDE')
@@ -423,9 +423,6 @@ if answer == "yes":
 
 
         
-        if control =='c':
-            print(carrot)
-            print(Carrotstr)
 
         if control == "a":
             animal = randint(1, 2)
@@ -642,7 +639,8 @@ if answer == "yes":
 
             else:
                 print("Canceled")
-        if control == "escape":
+        
+        if control == "h":
             dictionary ={
                 "User": User,
                 "invt" : invt,
@@ -663,9 +661,9 @@ if answer == "yes":
             }
             with open('data.json', 'w', encoding='utf-8') as f:
                 json.dump(data, f, ensure_ascii=False, indent=4)    
-        print("Data saved.")
-        print("Time has stopped.")
-        break    
+            print("Data saved.")
+            print("Time has stopped.")
+            break    
 
 if answer == "no":
     print ("No? Ok then..")
