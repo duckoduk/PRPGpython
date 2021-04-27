@@ -24,7 +24,377 @@ turn = 0
 UserHealth = 100
 Prize = 0
 cash = 100
-played = 1
+
+def saveData():
+    dictionary ={
+        "User": User,
+        "invt" : invt,
+        "bread" : bread,
+        "carrot" : carrot,
+        "Carrotstr" : Carrotstr,
+        "Breadstr" : Breadstr,
+        "Seedstr" : Seedstr,
+        "invf" : invf,
+        "invw" : invw,
+        "Pickaxe" : Pickaxe,
+        "Axe" : Axe,
+        "Hoe" : Hoe,
+        "Weapon" : Weapon,
+        "strength" : strength,
+        "Userhealth" : UserHealth,
+        "cash" : cash
+    }
+    
+    with open("savedata.json", "w") as outfile:
+        json.dump(dictionary, outfile)
+
+def bazaar():
+    print ("1. Tools", "2.Weapons", "3. Foods", "Your Current Cash:",cash, "[Press C to cancel]")
+    bcon = input("[Press C to cancel]")
+    if bcon == "1":
+        print ("Tools","1. Axes","2. Pickaxes","3. Hoes","Your Current Cash: ",cash)
+        tc = input (">>> ")
+        if tc == "1":
+            print ("Axes","1. Wood Axe : 100 cash","2. Stone Axe : 500 cash","3. Iron Axe : 2000 cash","4. Diamond Axe : 6000 cash")
+            ac = input (">>> ")
+            if ac == "1":
+                if cash >= 100:
+                    print ("You have purchased Wood Axe!")
+                    invt = invt + ",Wood Axe"
+                    Axe = "Wood Axe"
+                    cash = cash - 100
+                elif cash < 100:
+                    print ("You don't have enough cash to buy")
+            if ac == "2":
+                if cash >= 500:
+                    print ("You have purchased Stone Axe!")
+                    invt = invt + ",Stone Axe"
+                    Axe = "nothing"
+                    Axe = "Stone Axe"
+                    cash = cash - 500
+                elif cash < 500:
+                    print ("You don't have enough cash to buy")
+            if ac == "3":
+                if cash >= 2000:
+                    print ("You have purchased Iron Axe!")
+                    invt = invt + ",Iron Axe"
+                    Axe = "nothing"
+                    Axe = "Iron Axe"
+                    cash = cash - 2000
+                elif cash < 2000:
+                    print ("You don't have enough cash to buy")
+            if ac == "4":
+                if cash >= 6000:
+                    print ("You have purchased Diamond Axe!")
+                    invt = invt + ",Diamond Axe"
+                    Axe = "nothing"
+                    Axe = "Diamond Axe"
+                    cash = cash - 6000
+                elif cash < 6000:
+                    print ("You don't have enough cash to buy")
+            
+        if tc == "2": #여기서부터
+            print ("Axes","1. Wood Pickaxe : 300 cash","2. Stone pickaxe : 800 cash","3. Iron pickaxe : 2400 cash","4. Diamond Pickaxe : 6400 cash")
+            pc = input (">>> ")
+            if pc == "1":
+                if cash >= 300:
+                    print ("You have purchased Wood Pickaxe!")
+                    invt = invt + ",Wood Pickaxe"
+                    Pickaxe = "Wood Pickaxe"
+                    cash = cash - 300
+                elif cash < 300:
+                    print ("You don't have enough cash to buy")
+            if pc == "2":
+                if cash >= 800:
+                    print ("You have purchased Stone Pickaxe!")
+                    invt = invt + ",Stone Pickaxe"
+                    Pickaxe = "nothing"
+                    Pickaxe = "Stone Pickaxe"
+                    cash = cash - 800
+                elif cash < 800:
+                    print ("You don't have enough cash to buy")
+            if pc == "3":
+                if cash >= 2400:
+                    print ("You have purchased Iron Pickaxe!")
+                    invt = invt + ",Iron Pickaxe"
+                    Pickaxe = "nothing"
+                    Pickaxe = "Iron Pickaxe"
+                    cash = cash - 2400
+                elif cash < 2400:
+                    print ("You don't have enough cash to buy")
+            if pc == "4":
+                if cash >= 6400:
+                    print ("You have purchased Diamond Pickaxe!")
+                    invt = invt + ",Diamond Pickaxe"
+                    Pickaxe = "nothing"
+                    Pickaxe = "Diamond Pickaxe"
+                    cash = cash - 6400
+                elif cash < 6400:
+                    print ("You don't have enough cash to buy") 
+            
+        if tc == "3":
+            print ("Hoes","1. Wood Hoe : 500 cash","2. Stone Hoe : 1500 cash","3. Iron Hoe : 3500 cash","4. Diamond Hoe : 7000 cash")
+            hc = input (">>> ")
+            if hc == "1":
+                if cash >= 500:
+                    print ("You have purchased Wood Hoe!")
+                    invt = "Wood Hoe"
+                    Hoe = "Wood Hoe"
+                    cash = cash - 500
+                elif cash < 500:
+                    print ("You don't have enough cash to buy")
+            if hc == "2":
+                if cash >= 1500:
+                    print ("You have purchased Stone Hoe!")
+                    invt = invt + ",Stone Hoe"
+                    Hoe = "nothing"
+                    Hoe = "Stone Hoe"
+                    cash = cash - 1500
+                elif cash < 1500:
+                    print ("You don't have enough cash to buy")
+            if hc == "3":
+                if cash >= 3500:
+                    print ("You have purchased Iron Hoe!")
+                    invt = invt + ",Iron Hoe"
+                    Hoe = "nothing"
+                    Hoe = "Iron Hoe"
+                    cash = cash - 3500
+                elif cash < 3500:
+                    print ("You don't have enough cash to buy")
+            if hc == "4":
+                if cash >= 7000:
+                    print ("You have purchased Diamond Hoe!")
+                    invt = invt + ",Diamond Hoe"
+                    Hoe = "nothing"
+                    Hoe = "Diamond Hoe"
+                    cash = cash - 7000
+                elif cash < 7000:
+                    print ("You don't have enough cash to buy")
+        
+
+                    
+
+
+        
+    
+
+    if bcon == "2":
+        print ("Weapons","1. Swords")
+        wc = input (">>> ")
+        if wc == "1":
+            print ("Swords","1. Wood Sword : 100 cash","2. Stone Sword : 500 cash","3. Iron Sword : 3000 cash","4. Diamond Sword : 6000 cash",sep='\n')
+            sc = input("[What Sword Do You Want?]")
+            if sc == "1":
+                if cash >= 100:
+                    print ("You have purchased Wood Sword!")
+                    invw = "Wood Sword"
+                    Weapon = "nothing"
+                    Weapon = "Wood Sword"
+                    cash = cash - 100
+                elif cash < 100:
+                    print ("You don't have enough cash to buy")
+            if sc == "2":
+                if cash >= 500:
+                    print ("You have purchased Stone Sword!")
+                    invw = invw + ",Stone Sword"
+                    Weapon = "nothing"
+                    Weapon = "Stone Sword"
+                    cash = cash - 500
+                elif cash < 500:
+                    print ("You don't have enough cash to buy")
+            if sc == "3":
+                if cash >= 3000:
+                    print ("You have purchased Iron Sword!")
+                    invw = invw + ",Iron Sword"
+                    Weapon = "nothing"
+                    Weapon = "Iron Sword"
+                    cash = cash - 3000
+                elif cash < 3000:
+                    print ("You don't have enough cash to buy")
+            if sc == "4":
+                if cash >= 6000:
+                    print ("You have purchased Diamond Sword!")
+                    invw = invw + ",Diamond Sword"
+                    Weapon = "nothing"
+                    Weapon = "Diamond Sword"
+                    cash = cash - 6000
+                elif cash < 6000:
+                    print ("You don't have enough cash to buy")
+                
+
+    if bcon == "3":
+        print ("Foods","1. Carrot : 10 cash","2. Bread : 25 cash", "Current Cash: " + str(cash) ,sep='\n') 
+        fc = input (">>> ")
+        if fc == "1":
+            if cash >= 10:
+                print ("You have purchased a Carrot!")
+                carrot = carrot + 1     
+                Carrotstr = 'Carrots:'+str(carrot)   
+                cash = cash - 10
+            elif cash < 10:
+                print ("You don't have enough cash to buy")
+        if fc == "2":
+            if cash >= 25:
+                print ("You have purchased a Bread!")
+                bread = bread + 1
+                Breadstr = 'Bread:'+str(bread)
+                cash = cash - 25
+            elif cash < 25:
+                print ("You don't have enough cash to buy")
+        
+    if bcon == "c":
+            print ("Ok Canceled")
+
+    else:
+            print ("Shop Closed")
+
+def hunt():
+    animal = randint(1, 2)
+    if Weapon == "nothing":
+        print("You have no Weapon, go to bazaar and buy some")
+    elif Weapon != "nothing":
+        if animal == 1:
+            print("You found a Pig!")
+            OpponentHealth = 100
+            print("1. Attack  2. Run away")
+            while True:
+                acon = input (">>> ")
+                if acon == "1":
+                    if Weapon == "Wood Sword":
+                        Damage = randint(10, 15)
+                        OpponentHealth = OpponentHealth - math.floor(math.floor(Damage*strength))
+                        print("Now Pig's health is ",OpponentHealth,"!")
+                        if OpponentHealth <= 0:
+                            print("You have hunted a pig!")
+                            cash = cash + 150
+                            print("Your cash:",cash)
+                            break
+                        else:
+                            time.sleep(0.6)
+                            continue
+                    if Weapon == "Stone Sword":
+                        Damage = randint(15, 20)
+                        OpponentHealth = OpponentHealth - math.floor(math.floor(Damage*strength))
+                        print("Now Pig's health is ",OpponentHealth,"!")
+                        if OpponentHealth <= 0:
+                            print("You have hunted a pig!")
+                            cash = cash + 150
+                            print("Your cash:",cash)
+                            break
+                        else:
+                            time.sleep(0.6)
+                            continue
+                    if Weapon == "Iron Sword":
+                        Damage = randint(20, 25)
+                        OpponentHealth = OpponentHealth - math.floor(Damage*strength)
+                        print("Now Pig's health is ",OpponentHealth,"!")
+                        if OpponentHealth <= 0:
+                            print("You have hunted a pig!")
+                            cash = cash + 150
+                            print("Your cash:",cash)
+                            break
+                        else:
+                            time.sleep(0.6)
+                            continue
+                    if Weapon == "Gold Sword":
+                        Damage = randint(25, 30)
+                        OpponentHealth = OpponentHealth - math.floor(Damage*strength)
+                        print("Now Pig's health is ",OpponentHealth,"!")
+                        if OpponentHealth <= 0:
+                            print("You have hunted a pig!")
+                            cash = cash + 150
+                            print("Your cash:",cash)
+                            break
+                        else:
+                            time.sleep(0.6)
+                            continue
+                    if Weapon == "Diamond Sword":
+                        Damage = randint(30, 35)
+                        OpponentHealth = OpponentHealth - math.floor(Damage*strength)
+                        print("Now Pig's health is ",OpponentHealth,"!")
+                        if OpponentHealth <= 0:
+                            print("You have hunted a pig!")
+                            cash = cash + 150
+                            print("Your cash:",cash)
+                            break
+                        else:
+                            time.sleep(0.6)
+                            continue
+            
+                else:
+                    break
+            
+    if animal == 2:
+        print("You found a Cow!")
+        OpponentHealth = 200
+        print("1. Attack  2. Run away")
+        while OpponentHealth >= 0:
+            acon = input (">>> ")
+            if acon == "1":
+                if Weapon == "Wood Sword":
+                    Damage = randint(10, 15)
+                    OpponentHealth = OpponentHealth - math.floor(Damage*strength)
+                    print("Now Cow's health is ",OpponentHealth,"!")
+                    if OpponentHealth <= 0:
+                        print("You have hunt your pig!")
+                        cash = cash + 400
+                        print("Your cash:",cash)
+                        break
+                    else:
+                        time.sleep(1)
+                        continue
+                if Weapon == "Stone Sword":
+                    Damage = randint(15, 20)
+                    OpponentHealth = OpponentHealth - math.floor(Damage*strength)
+                    print("Now Cow's health is ",OpponentHealth,"!")
+                    if OpponentHealth <= 0:
+                        print("You have hunt your cow!")
+                        cash = cash + 400
+                        print("Your cash:",cash)
+                        break
+                    else:
+                        time.sleep(1)
+                        continue
+                if Weapon == "Iron Sword":
+                    Damage = randint(20, 25)
+                    OpponentHealth = OpponentHealth - math.floor(Damage*strength)
+                    print("Now Cow's health is ",OpponentHealth,"!")
+                    if OpponentHealth <= 0:
+                        print("You have hunt your cow!")
+                        cash = cash + 400
+                        print("Your cash:",cash)
+                        break
+                    else:
+                        time.sleep(1)
+                        continue
+                if Weapon == "Gold Sword":
+                    Damage = randint(25, 30)
+                    OpponentHealth = OpponentHealth - math.floor(Damage*strength)
+                    print("Now Cow's health is ",OpponentHealth,"!")
+                    if OpponentHealth <= 0:
+                        print("You have hunt your cow!")
+                        cash = cash + 400
+                        print("Your cash:",cash)
+                        break
+                    else:
+                        time.sleep(1)
+                        continue
+                if Weapon == "Diamond Sword":
+                    Damage = randint(30, 35)
+                    OpponentHealth = OpponentHealth - math.floor(Damage*strength)
+                    print("Now Cow's health is ",OpponentHealth,"!")
+                    if OpponentHealth <= 0:
+                        print("You have hunt your cow!")
+                        cash = cash + 400
+                        print("Your cash:",cash)
+                        break
+                    else:
+                        time.sleep(1)
+                        continue
+            else:
+                print("You succesfully ran away from",animal,"!")
+                break
+
 print("Hello! What's your name?")
 User = input(">>> ")
 print ("???: Oh hello, nice to meet you "+User+"!")
@@ -53,204 +423,7 @@ if answer == "yes":
     while True:
         control = input(">>> ")
         if control == "b":
-            print ("1. Tools", "2.Weapons", "3. Foods", "Your Current Cash:",cash, "[Press C to cancel]")
-            bcon = input("[Press C to cancel]")
-            if bcon == "1":
-                print ("Tools","1. Axes","2. Pickaxes","3. Hoes","Your Current Cash: ",cash)
-                tc = input (">>> ")
-                if tc == "1":
-                    print ("Axes","1. Wood Axe : 100 cash","2. Stone Axe : 500 cash","3. Iron Axe : 2000 cash","4. Diamond Axe : 6000 cash")
-                    ac = input (">>> ")
-                    if ac == "1":
-                        if cash >= 100:
-                            print ("You have purchased Wood Axe!")
-                            invt = invt + ",Wood Axe"
-                            Axe = "Wood Axe"
-                            cash = cash - 100
-                        elif cash < 100:
-                            print ("You don't have enough cash to buy")
-                    if ac == "2":
-                        if cash >= 500:
-                            print ("You have purchased Stone Axe!")
-                            invt = invt + ",Stone Axe"
-                            Axe = "nothing"
-                            Axe = "Stone Axe"
-                            cash = cash - 500
-                        elif cash < 500:
-                            print ("You don't have enough cash to buy")
-                    if ac == "3":
-                        if cash >= 2000:
-                            print ("You have purchased Iron Axe!")
-                            invt = invt + ",Iron Axe"
-                            Axe = "nothing"
-                            Axe = "Iron Axe"
-                            cash = cash - 2000
-                        elif cash < 2000:
-                            print ("You don't have enough cash to buy")
-                    if ac == "4":
-                        if cash >= 6000:
-                            print ("You have purchased Diamond Axe!")
-                            invt = invt + ",Diamond Axe"
-                            Axe = "nothing"
-                            Axe = "Diamond Axe"
-                            cash = cash - 6000
-                        elif cash < 6000:
-                            print ("You don't have enough cash to buy")
-                    
-                if tc == "2": #여기서부터
-                    print ("Axes","1. Wood Pickaxe : 300 cash","2. Stone pickaxe : 800 cash","3. Iron pickaxe : 2400 cash","4. Diamond Pickaxe : 6400 cash")
-                    pc = input (">>> ")
-                    if pc == "1":
-                        if cash >= 300:
-                            print ("You have purchased Wood Pickaxe!")
-                            invt = invt + ",Wood Pickaxe"
-                            Pickaxe = "Wood Pickaxe"
-                            cash = cash - 300
-                        elif cash < 300:
-                            print ("You don't have enough cash to buy")
-                    if pc == "2":
-                        if cash >= 800:
-                            print ("You have purchased Stone Pickaxe!")
-                            invt = invt + ",Stone Pickaxe"
-                            Pickaxe = "nothing"
-                            Pickaxe = "Stone Pickaxe"
-                            cash = cash - 800
-                        elif cash < 800:
-                            print ("You don't have enough cash to buy")
-                    if pc == "3":
-                        if cash >= 2400:
-                            print ("You have purchased Iron Pickaxe!")
-                            invt = invt + ",Iron Pickaxe"
-                            Pickaxe = "nothing"
-                            Pickaxe = "Iron Pickaxe"
-                            cash = cash - 2400
-                        elif cash < 2400:
-                            print ("You don't have enough cash to buy")
-                    if pc == "4":
-                        if cash >= 6400:
-                            print ("You have purchased Diamond Pickaxe!")
-                            invt = invt + ",Diamond Pickaxe"
-                            Pickaxe = "nothing"
-                            Pickaxe = "Diamond Pickaxe"
-                            cash = cash - 6400
-                        elif cash < 6400:
-                            print ("You don't have enough cash to buy") 
-                    
-                if tc == "3":
-                    print ("Hoes","1. Wood Hoe : 500 cash","2. Stone Hoe : 1500 cash","3. Iron Hoe : 3500 cash","4. Diamond Hoe : 7000 cash")
-                    hc = input (">>> ")
-                    if hc == "1":
-                        if cash >= 500:
-                            print ("You have purchased Wood Hoe!")
-                            invt = "Wood Hoe"
-                            Hoe = "Wood Hoe"
-                            cash = cash - 500
-                        elif cash < 500:
-                            print ("You don't have enough cash to buy")
-                    if hc == "2":
-                        if cash >= 1500:
-                            print ("You have purchased Stone Hoe!")
-                            invt = invt + ",Stone Hoe"
-                            Hoe = "nothing"
-                            Hoe = "Stone Hoe"
-                            cash = cash - 1500
-                        elif cash < 1500:
-                            print ("You don't have enough cash to buy")
-                    if hc == "3":
-                        if cash >= 3500:
-                            print ("You have purchased Iron Hoe!")
-                            invt = invt + ",Iron Hoe"
-                            Hoe = "nothing"
-                            Hoe = "Iron Hoe"
-                            cash = cash - 3500
-                        elif cash < 3500:
-                            print ("You don't have enough cash to buy")
-                    if hc == "4":
-                        if cash >= 7000:
-                            print ("You have purchased Diamond Hoe!")
-                            invt = invt + ",Diamond Hoe"
-                            Hoe = "nothing"
-                            Hoe = "Diamond Hoe"
-                            cash = cash - 7000
-                        elif cash < 7000:
-                            print ("You don't have enough cash to buy")
-                
-
-                            
-
-
-                
-            
-
-            if bcon == "2":
-                print ("Weapons","1. Swords")
-                wc = input (">>> ")
-                if wc == "1":
-                    print ("Swords","1. Wood Sword : 100 cash","2. Stone Sword : 500 cash","3. Iron Sword : 3000 cash","4. Diamond Sword : 6000 cash",sep='\n')
-                    sc = input("[What Sword Do You Want?]")
-                    if sc == "1":
-                        if cash >= 100:
-                            print ("You have purchased Wood Sword!")
-                            invw = "Wood Sword"
-                            Weapon = "nothing"
-                            Weapon = "Wood Sword"
-                            cash = cash - 100
-                        elif cash < 100:
-                            print ("You don't have enough cash to buy")
-                    if sc == "2":
-                        if cash >= 500:
-                            print ("You have purchased Stone Sword!")
-                            invw = invw + ",Stone Sword"
-                            Weapon = "nothing"
-                            Weapon = "Stone Sword"
-                            cash = cash - 500
-                        elif cash < 500:
-                            print ("You don't have enough cash to buy")
-                    if sc == "3":
-                        if cash >= 3000:
-                            print ("You have purchased Iron Sword!")
-                            invw = invw + ",Iron Sword"
-                            Weapon = "nothing"
-                            Weapon = "Iron Sword"
-                            cash = cash - 3000
-                        elif cash < 3000:
-                            print ("You don't have enough cash to buy")
-                    if sc == "4":
-                        if cash >= 6000:
-                            print ("You have purchased Diamond Sword!")
-                            invw = invw + ",Diamond Sword"
-                            Weapon = "nothing"
-                            Weapon = "Diamond Sword"
-                            cash = cash - 6000
-                        elif cash < 6000:
-                            print ("You don't have enough cash to buy")
-                        
-    
-            if bcon == "3":
-                print ("Foods","1. Carrot : 10 cash","2. Bread : 25 cash", "Current Cash: " + str(cash) ,sep='\n') 
-                fc = input (">>> ")
-                if fc == "1":
-                    if cash >= 10:
-                        print ("You have purchased a Carrot!")
-                        carrot = carrot + 1     
-                        Carrotstr = 'Carrots:'+str(carrot)   
-                        cash = cash - 10
-                    elif cash < 10:
-                        print ("You don't have enough cash to buy")
-                if fc == "2":
-                    if cash >= 25:
-                        print ("You have purchased a Bread!")
-                        bread = bread + 1
-                        Breadstr = 'Bread:'+str(bread)
-                        cash = cash - 25
-                    elif cash < 25:
-                        print ("You don't have enough cash to buy")
-                
-            if bcon == "c":
-                    print ("Ok Canceled")
-
-            else:
-                    print ("Shop Closed")
+            bazaar()
                 
         if control == "c":   #여기부터 c 버튼에 대한것 
             while True:
@@ -367,7 +540,14 @@ if answer == "yes":
                     continue
         
         if control == "x":
-            break
+            print("???: Do you want to stop the time?")
+            stopanswer = input("[yes or no?] ")
+            if stopanswer == "yes":
+                saveData()
+                print("Time has stopped, and your progress has been saved.")
+                import title
+            else:
+                print("???: Ok, you can stop the time whenever you want, I will be waiting for you.")
 
         if control == "i":
             print ("1. Weapons, 2. Tools, 3: Foods")
@@ -407,11 +587,11 @@ if answer == "yes":
 
         if control == "t":
             print('1. controls','2. guide', sep='\n')
-            tcon = input('C to Cancel>>>')
+            tcon = input('[C to Cancel]')
             while True:
                 if tcon == '1':
                     print('CONTROLS')
-                    print ("A: Hunt","C: Chop Trees","M: Mine","B: Open Bazaar","S: Show Stats","I: Inventory","X: Exit","T: Show Tutorial","H: Save the Game", sep='\n')
+                    print ("A: Hunt","C: Chop Trees","M: Mine","B: Open Bazaar","S: Show Stats","I: Inventory","X: Exit","T: Show Tutorial", sep='\n')
                     break
                 if tcon == '2':
                     print('GUIDE')
@@ -423,158 +603,13 @@ if answer == "yes":
 
 
         
+        if control =='c':
+            print(carrot)
+            print(Carrotstr)
 
         if control == "a":
-            animal = randint(1, 2)
-            if Weapon == "nothing":
-                print("You have no Weapon, go to bazaar and buy some")
-            elif Weapon != "nothing":
-                if animal == 1:
-                    print("You found a Pig!")
-                    OpponentHealth = 100
-                    print("1. Attack  2. Run away")
-                    while True:
-                        acon = input (">>> ")
-                        if acon == "1":
-                            if Weapon == "Wood Sword":
-                                Damage = randint(10, 15)
-                                OpponentHealth = OpponentHealth - math.floor(math.floor(Damage*strength))
-                                print("Now Pig's health is ",OpponentHealth,"!")
-                                if OpponentHealth <= 0:
-                                    print("You have hunt your pig!")
-                                    cash = cash + 150
-                                    print("Your cash:",cash)
-                                    break
-                                else:
-                                    time.sleep(0.6)
-                                    continue
-                            if Weapon == "Stone Sword":
-                                Damage = randint(15, 20)
-                                OpponentHealth = OpponentHealth - math.floor(math.floor(Damage*strength))
-                                print("Now Pig's health is ",OpponentHealth,"!")
-                                if OpponentHealth <= 0:
-                                    print("You have hunt your pig!")
-                                    cash = cash + 150
-                                    print("Your cash:",cash)
-                                    break
-                                else:
-                                    time.sleep(0.6)
-                                    continue
-                            if Weapon == "Iron Sword":
-                                Damage = randint(20, 25)
-                                OpponentHealth = OpponentHealth - math.floor(Damage*strength)
-                                print("Now Pig's health is ",OpponentHealth,"!")
-                                if OpponentHealth <= 0:
-                                    print("You have hunt your pig!")
-                                    cash = cash + 150
-                                    print("Your cash:",cash)
-                                    break
-                                else:
-                                    time.sleep(0.6)
-                                    continue
-                            if Weapon == "Gold Sword":
-                                Damage = randint(25, 30)
-                                OpponentHealth = OpponentHealth - math.floor(Damage*strength)
-                                print("Now Pig's health is ",OpponentHealth,"!")
-                                if OpponentHealth <= 0:
-                                    print("You have hunt your pig!")
-                                    cash = cash + 150
-                                    print("Your cash:",cash)
-                                    break
-                                else:
-                                    time.sleep(0.6)
-                                    continue
-                            if Weapon == "Diamond Sword":
-                                Damage = randint(30, 35)
-                                OpponentHealth = OpponentHealth - math.floor(Damage*strength)
-                                print("Now Pig's health is ",OpponentHealth,"!")
-                                if OpponentHealth <= 0:
-                                    print("You have hunt your pig!")
-                                    cash = cash + 150
-                                    print("Your cash:",cash)
-                                    break
-                                else:
-                                    time.sleep(0.6)
-                                    continue
-                    
-                        else:
-                            break
-                        
-                if animal == 2:
-                    print("You found a Cow!")
-                    OpponentHealth = 200
-                    print("1. Attack  2. Run away")
-                    while OpponentHealth >= 0:
-                        acon = input (">>> ")
-                        if acon == "1":
-                            if Weapon == "Wood Sword":
-                                Damage = randint(10, 15)
-                                OpponentHealth = OpponentHealth - math.floor(Damage*strength)
-                                print("Now Cow's health is ",OpponentHealth,"!")
-                                if OpponentHealth <= 0:
-                                    print("You have hunt your pig!")
-                                    cash = cash + 400
-                                    print("Your cash:",cash)
-                                    break
-                                else:
-                                    time.sleep(1)
-                                    continue
-                            if Weapon == "Stone Sword":
-                                Damage = randint(15, 20)
-                                OpponentHealth = OpponentHealth - math.floor(Damage*strength)
-                                print("Now Cow's health is ",OpponentHealth,"!")
-                                if OpponentHealth <= 0:
-                                    print("You have hunt your cow!")
-                                    cash = cash + 400
-                                    print("Your cash:",cash)
-                                    break
-                                else:
-                                    time.sleep(1)
-                                    continue
-                            if Weapon == "Iron Sword":
-                                Damage = randint(20, 25)
-                                OpponentHealth = OpponentHealth - math.floor(Damage*strength)
-                                print("Now Cow's health is ",OpponentHealth,"!")
-                                if OpponentHealth <= 0:
-                                    print("You have hunt your cow!")
-                                    cash = cash + 400
-                                    print("Your cash:",cash)
-                                    break
-                                else:
-                                    time.sleep(1)
-                                    continue
-                            if Weapon == "Gold Sword":
-                                Damage = randint(25, 30)
-                                OpponentHealth = OpponentHealth - math.floor(Damage*strength)
-                                print("Now Cow's health is ",OpponentHealth,"!")
-                                if OpponentHealth <= 0:
-                                    print("You have hunt your cow!")
-                                    cash = cash + 400
-                                    print("Your cash:",cash)
-                                    break
-                                else:
-                                    time.sleep(1)
-                                    continue
-                            if Weapon == "Diamond Sword":
-                                Damage = randint(30, 35)
-                                OpponentHealth = OpponentHealth - math.floor(Damage*strength)
-                                print("Now Cow's health is ",OpponentHealth,"!")
-                                if OpponentHealth <= 0:
-                                    print("You have hunt your cow!")
-                                    cash = cash + 400
-                                    print("Your cash:",cash)
-                                    break
-                                else:
-                                    time.sleep(1)
-                                    continue
-                        else:
-                            print("You succesfully ran away from",animal,"!")
-                            break
-        
-        
-        
-        
-        
+            hunt()
+
         if control == "f":
             print("Do you want to plant your carrot?")
             print("You need to wait [1 min] to grow you carrot")
@@ -638,32 +673,7 @@ if answer == "yes":
                         print(Seedstr)
 
             else:
-                print("Canceled")
-        
-        if control == "h":
-            dictionary ={
-                "User": User,
-                "invt" : invt,
-                "bread" : bread,
-                "carrot" : carrot,
-                "Carrotstr" : Carrotstr,
-                "Breadstr" : Breadstr,
-                "Seedstr" : Seedstr,
-                "invf" : invf,
-                "invw" : invw,
-                "Pickaxe" : Pickaxe,
-                "Axe" : Axe,
-                "Hoe" : Hoe,
-                "Weapon" : Weapon,
-                "strength" : strength,
-                "Userhealth" : UserHealth,
-                "cash" : cash
-            }
-            with open('data.json', 'w', encoding='utf-8') as f:
-                json.dump(data, f, ensure_ascii=False, indent=4)    
-            print("Data saved.")
-            print("Time has stopped.")
-            break    
+                print("Canceled")    
 
 if answer == "no":
     print ("No? Ok then..")
